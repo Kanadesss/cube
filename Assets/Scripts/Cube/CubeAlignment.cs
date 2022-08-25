@@ -2,10 +2,9 @@ using UnityEngine;
 using System;
 
 public class CubeAlignment : MonoBehaviour {
-
   public static event Func<Quaternion> OnAligned;
 
-  [SerializeField] private LayerMask environment;
+  [SerializeField] private LayerMask _environment;
 
   void Update() {
 
@@ -60,7 +59,7 @@ public class CubeAlignment : MonoBehaviour {
   }
   
   private bool CheckCoordinates(Vector3 position, float diameter) {
-    Collider[] colliders = Physics.OverlapSphere(position, diameter / 2 - diameter / 20 , environment);
+    Collider[] colliders = Physics.OverlapSphere(position, diameter / 2 - diameter / 20 , _environment);
 
     if (colliders.Length == 0) {
       return true;
