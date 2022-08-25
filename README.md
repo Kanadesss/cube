@@ -1,2 +1,2 @@
-# cube1
+# Cube
  
